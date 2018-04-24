@@ -1,0 +1,11 @@
+<% if @question.question.any? %>
+  <h4>Some Title</h4>
+  <ul>
+    <% @question.questions.each do |q| %>
+    <li><%= question.question %> <%= link_to "Delete Question", questions_path(question), class:"btn btn-danger" %>
+    </li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>There are no questions for this category</p>
+  <% end %>

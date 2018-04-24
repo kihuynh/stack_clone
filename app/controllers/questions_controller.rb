@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  # before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @questions = Question.all

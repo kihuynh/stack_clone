@@ -1,11 +1,12 @@
-<% if @question.question.any? %>
+<% if @question.responses.any? %>
   <h4>Some Title</h4>
   <ul>
-    <% @question.questions.each do |q| %>
-    <li><%= question.question %> <%= link_to "Delete Question", questions_path(question), class:"btn btn-danger" %>
+    <% @question.responses.each do |r| %>
+    <li><%= r.response %> <%= link_to "Delete Response", question_response_path(@question, r), class:"btn btn-danger",
+    :method => "Delete" %>
     </li>
     <% end %>
   </ul>
-  <% else %>
-    <p>There are no questions for this category</p>
-  <% end %>
+<% else %>
+  <p>There are no questions for this category</p>
+<% end %>
